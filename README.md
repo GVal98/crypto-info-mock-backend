@@ -1,2 +1,2 @@
-# crypto-info-backend
-Backend for Crypto Info
+# crypto-info-mock-backend
+Mock backend for Crypto Info
