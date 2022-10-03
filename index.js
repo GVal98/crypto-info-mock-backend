@@ -1,3 +1,5 @@
+const https = require("https")
+const fs = require("fs")
 const express = require('express')
 cors = require('cors')
 const app = express()
@@ -48,6 +50,12 @@ app.delete('/favorites/:coinId', function (req, res) {
   console.log(favorites)
 })
  
-app.listen(3001, function(err){
+https.createServer(
+  {
+    key: fs.readFileSync("/etc/letsencrypt/live/gval98.com/privkey.pem"),
+    cert: fs.readFileSync("/etc/letsencrypt/live/gval98.com/fullchain.pem"),
+  },
+  app
+).listen(3001, function(err){
   if (err) console.log(err)
   console.log("Server listening")})
