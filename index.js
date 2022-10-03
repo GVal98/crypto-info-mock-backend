@@ -48,4 +48,6 @@ app.delete('/favorites/:coinId', function (req, res) {
   console.log(favorites)
 })
  
-app.listen(3001)
+app.listen(3001, function(err){
+  if (err) console.log(err)
+  console.log("Server listening")})
